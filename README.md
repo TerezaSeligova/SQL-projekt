@@ -42,3 +42,11 @@ U faktové tabulky cen byl postup následovný:
   - vytvářím materializované view
 Spojuji 2 materializované view a vytvářím tabulku z údajů přes INNER JOIN, kde se mi protínají hodnoty za období 2006-2018.
 
+**Odpovědi na otázky**
+1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+     V některých odvětvích v průběhu let mzdy kelsají, například Zemědělství, lesnictví, rybářství v roce 2009 nebo
+  <img width="1332" height="426" alt="image" src="https://github.com/user-attachments/assets/6d17da87-f361-47d7-9f28-506fcb0220f9" />
+2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+     
+
+
