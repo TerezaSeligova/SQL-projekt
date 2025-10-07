@@ -14,5 +14,4 @@ WHERE e.YEAR BETWEEN 2006 AND 2018
 GROUP BY 
 	YEAR, 
 	gdp)
---budu do toho muset započítat průměrný počet lidí na HDP? 
 
