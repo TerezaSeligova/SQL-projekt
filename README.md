@@ -45,8 +45,23 @@ Spojuji 2 materializované view a vytvářím tabulku z údajů přes INNER JOIN
 **Odpovědi na otázky**
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
      V některých odvětvích v průběhu let mzdy kelsají, například Zemědělství, lesnictví, rybářství v roce 2009 nebo
-  <img width="1332" height="426" alt="image" src="https://github.com/user-attachments/assets/6d17da87-f361-47d7-9f28-506fcb0220f9" />
-2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+   
+3. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+   
+     Za první období (2006) je možné si koupit 1466 litrů mléka a 1313 kg chleba. Při výpočtu jsem využívala CTE pro napočítávání jednotlivých hodnot a postupovala jsem krok po kroku, aby dotaz byl přehledný. Zároveň jsem si vždy zjistila jaký rok je ten první. 
+     Za poslední (2018) období je možné si zakoupit 1670 litrů mléka a 1365 kg chleba. Při výpočtu jsem postupovala stejně jako za období 2006, měnila jsem pouze ASC na DESC.
+   
+3.Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
+    
+    Cukr krystalový zdražuje nejpomaleji, celkově zde dokonce dochází i ke zlevnění. Naopak nejvíce zdražují papriky. K výpočtu jsem zde kromě CTE na napočítávání hodnot a přehlednosti využívala i window functions, kde jsem si za pomocí funkce LAG zapsala předešlou hodnotu. Pak jsem již využila vzorec pro zjištění meziroční hodnoty a seřadila si jednotlivé výsledky sestupně, aby se mi na první hodnotě ukázala nejnižší hodnota.
+    
+4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+   
+    Tento rok neexistuje, nejvyšší hodnoty jsou v roce 2013, kdy docházelo k 6% rozdílu cen a mezd, nicméně ostatní roky se pohybujeme v záporných %, tzn. že u mezd docházelo v průměru k vyššímu nárůstu, než u cen. K zjištění výsledku jsem využívala CTE, přičemž prvním kroku jsem využila vypočítání průměru mzdy za jendotlivé roky, poté jsem využívala k zjištění předchozí hodnoty funkci LAG, při následným kroku jsem napočítávala procentuální změnu a to jak pro mzdu, tak i pro ceny, u kterých jsem počítala s LAG, konečný výsledek jsem si přes podmínku CASE WHEN vydefinovala jaké hodnoty jsou ty, které mi splňují danou podmínku.
+
+5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo následujícím roce výraznějším růstem?
+
+   Vliv HDP na změny ve mzdách má. Nejvýrazněji koreluje změna HDP se změnou mzdy v následujícím roce. Tudíž pokud vzroste HDP v jednom roce, mzda vzroste v následujícím roce. Naopak nejmenší korelace, tedy spíše žádný vztah je u HDP a cen potravin v následujícím roce. Výsledky zde vycházejí v záporných hodnotách a velmi blízko nule. Přičemž na cenu potravin v daném roce má HDP vliv. Hodnota je zde kladná a blíží se 1, přičemž, ale stále nejvíce koreluje mzda v následujícícm roce s HDP. 
      
 
 
