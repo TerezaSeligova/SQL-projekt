@@ -1,4 +1,4 @@
--první období
+--první období
 WITH cte_first_milk_bread AS (
 	SELECT 
 		date_from, 
@@ -27,7 +27,7 @@ cte_wage AS (
 		ROUND(w.average_wage/m.avg_price) AS amount_of_bought_units
 	FROM cte_wage w
 	CROSS JOIN cte_first_milk_bread m;
-- poslední období
+-- poslední období
 WITH cte_last_milk_bread AS (
 	SELECT 
 		date_from, 
