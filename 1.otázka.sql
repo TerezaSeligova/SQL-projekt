@@ -38,7 +38,7 @@ FROM cte_result
 WHERE outcome = 'DECREASING'
 ORDER BY date_from;
 			
-		--- v některých odvětvích mzdy klesají meziročně klesají
+	
 
 
 		
