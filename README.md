@@ -42,9 +42,12 @@ U faktové tabulky cen byl postup následovný:
   - vytvářím materializované view
 Spojuji 2 materializované view a vytvářím tabulku z údajů přes INNER JOIN, kde se mi protínají hodnoty za období 2006-2018.
 
+Sekundární tabulka vznikla vybráním potřebných sloupců z primární tabulky a spojením s HDP pro ČR, v tabulce, kde se vyskytovalo HDP byly vybrány pouze roky 2006-2018. Spojení probíhalo přes LEFT JOIN a přes klíč "rok".
+  
+
 **Odpovědi na otázky**
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
-     V některých odvětvích v průběhu let mzdy kelsají, například Zemědělství, lesnictví, rybářství v roce 2009 nebo
+     V některých odvětvích v průběhu let mzdy kelsají, jedná se například o rok 2013 Peněžnictví a pojišťovniství nebo Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu. 
    
 3. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
    
