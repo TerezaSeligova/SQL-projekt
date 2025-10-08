@@ -54,7 +54,7 @@ Sekundární tabulka vznikla vybráním potřebných sloupců z primární tabul
      Za první období (2006) je možné si koupit 1466 litrů mléka a 1313 kg chleba. Při výpočtu jsem využívala CTE pro napočítávání jednotlivých hodnot a postupovala jsem krok po kroku, aby dotaz byl přehledný. Zároveň jsem si vždy zjistila jaký rok je ten první. 
      Za poslední (2018) období je možné si zakoupit 1670 litrů mléka a 1365 kg chleba. Při výpočtu jsem postupovala stejně jako za období 2006, měnila jsem pouze ASC na DESC.
    
-3.Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
+3.Která kategorie potravin zdražuje nejpomaleji - je u ní nejnižší percentuální meziroční nárůst?
     
     Cukr krystalový zdražuje nejpomaleji, celkově zde dokonce dochází i ke zlevnění. Naopak nejvíce zdražují papriky. K výpočtu jsem zde kromě CTE na napočítávání hodnot a přehlednosti využívala i window functions, kde jsem si za pomocí funkce LAG zapsala předešlou hodnotu. Pak jsem již využila vzorec pro zjištění meziroční hodnoty a seřadila si jednotlivé výsledky sestupně, aby se mi na první hodnotě ukázala nejnižší hodnota.
     
