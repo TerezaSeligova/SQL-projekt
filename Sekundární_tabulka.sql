@@ -1,6 +1,3 @@
-SELECT *
-FROM t_tereza_seligova_project_sql_primary_final 
-
 CREATE TABLE seligova_project_SQL_secondary_final AS (
 SELECT
 	YEAR,
