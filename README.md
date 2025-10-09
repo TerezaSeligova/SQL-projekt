@@ -1,5 +1,5 @@
 # SQL-projekt
-Dostupnost základních potravin v ČR vs. mzdy
+Dostupnost základních potravin a porovnání mezd v ČR
 
 **Technologie:** PostgreSQL
 
