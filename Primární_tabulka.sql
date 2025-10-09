@@ -1,4 +1,3 @@
-- příprava první tabulky
 WITH cte_clear_table AS ( 
 	SELECT 
 		value,
@@ -30,7 +29,7 @@ cte_join AS (
 SELECT *
 FROM cte_join;
 
--- vytvořím si materializované view
+
 
 CREATE MATERIALIZED VIEW mv_mzdy AS (
 	WITH cte_clear_table AS ( 
@@ -64,7 +63,7 @@ CREATE MATERIALIZED VIEW mv_mzdy AS (
 	SELECT *
 	FROM cte_join);
 
-- příprava druhé tabulky 
+
 	
 WITH cte_zkouska_datumu AS (
 	SELECT 
@@ -76,7 +75,7 @@ WITH cte_zkouska_datumu AS (
  FROM cte_zkouska_datumu
  WHERE date_from != date_to;
 
--- zjistím si jaké hodnoty potřebuji k tomu, abych mohla spojit cenu tabulek se mzdou
+
 WITH cte_clear_table AS (
 	 SELECT 
 	 	EXTRACT (YEAR FROM date_from) AS date_from,
@@ -106,7 +105,8 @@ cte_join AS (
 SELECT * 
 FROM cte_join;
 
---vytvořím si materialized view 
+
+
 CREATE MATERIALIZED VIEW mv_ceny AS 
 	( WITH cte_clear_table AS (
 			 SELECT 
@@ -138,7 +138,7 @@ CREATE MATERIALIZED VIEW mv_ceny AS
 	FROM cte_join);
 
 
--- vytvořím si tabulku primární -- inner join 
+
 CREATE TABLE t_tereza_seligova_project_sql_primary_final AS 
 	(SELECT 
 		m.date_from,
