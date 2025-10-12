@@ -10,7 +10,7 @@ WITH cte_prepare AS (
 		SELECT 
 			date_from,
 			avg_wage,
-			LAG(avg_wage) OVER (Partition BY sector_name ORDER BY date_from) AS previous_wage,
+			LAG(avg_wage) OVER (PARTITION BY sector_name ORDER BY date_from) AS previous_wage,
 			sector_name
 		FROM cte_prepare
 ),
